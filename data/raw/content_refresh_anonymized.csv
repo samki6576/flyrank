@@ -1,0 +1,6 @@
+content_id,topic,audience_segment,baseline_ctr,refreshed_ctr,uplift
+1,news,segment_a,0.028,0.034,0.006
+2,howto,segment_b,0.031,0.033,0.002
+3,product,segment_a,0.025,0.029,0.004
+4,review,segment_c,0.022,0.021,-0.001
+5,guide,segment_b,0.036,0.041,0.005
