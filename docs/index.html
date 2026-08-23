@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samra Safdar – ML Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@400;500&display=swap');
+        :root {
+            --main: #1A3A5C;
+            --text: #1E1E1E;
+            --bg: #F8F9FA;
+            --accent: #2A9D8F;
+            --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Lora', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; color: var(--main); }
+        .accent { color: var(--accent); }
+        .hero { text-align: center; padding: 2rem 0 1.5rem; }
+        .hero h1 { font-size: 3rem; font-weight: 700; }
+        .hero .claim { font-size: 1.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .hero .sub { font-size: 1.2rem; color: #555; }
+        .cta-btn {
+            display: inline-block;
+            background: var(--main);
+            color: var(--white);
+            padding: 0.8rem 2.5rem;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+        }
+        .cta-btn:hover { background: var(--accent); }
+        .section-title { font-size: 2rem; font-weight: 600; margin: 2.5rem 0 1.5rem; border-bottom: 4px solid var(--accent); padding-bottom: 0.3rem; display: inline-block; }
+        .card { background: var(--bg); border-radius: 12px; padding: 1.8rem 2rem; margin: 1.2rem 0; border-left: 5px solid var(--accent); }
+        .card h3 { margin-bottom: 0.3rem; font-size: 1.4rem; }
+        .card .tag { background: var(--accent); color: white; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.8rem; border-radius: 20px; display: inline-block; margin-bottom: 0.5rem; }
+        .skill-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.8rem 0; }
+        .skill-list span { background: white; border: 1px solid #ddd; padding: 0.2rem 1rem; border-radius: 30px; font-size: 0.9rem; font-family: 'Inter', sans-serif; }
+        .footer { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e0e0e0; font-size: 0.9rem; color: #777; }
+        .agent-widget { position: fixed; bottom: 30px; right: 30px; z-index: 999; }
+        .agent-toggle { background: var(--main); color: white; border: none; border-radius: 60px; padding: 0.8rem 1.8rem; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; cursor: pointer; box-shadow: 0 6px 24px rgba(26,58,92,0.3); }
+        .agent-toggle:hover { background: var(--accent); }
+        .agent-chat { display: none; background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); width: 340px; max-height: 450px; overflow: hidden; margin-bottom: 12px; flex-direction: column; border: 1px solid #e0e0e0; }
+        .agent-chat.open { display: flex; }
+        .agent-header { background: var(--main); color: white; padding: 0.8rem 1.2rem; font-family: 'Inter', sans-serif; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+        .agent-header button { background: none; border: none; color: white; font-size: 1.4rem; cursor: pointer; }
+        .agent-messages { padding: 1rem; flex: 1; overflow-y: auto; max-height: 280px; background: #fafafa; }
+        .agent-messages p { margin: 0.4rem 0; font-size: 0.95rem; }
+        .agent-messages .bot { background: var(--bg); padding: 0.5rem 0.8rem; border-radius: 12px 12px 12px 4px; display: inline-block; }
+        .agent-messages .user { text-align: right; color: var(--main); font-weight: 500; }
+        .agent-input-area { display: flex; border-top: 1px solid #e0e0e0; padding: 0.5rem; gap: 0.5rem; }
+        .agent-input-area input { flex: 1; padding: 0.6rem 1rem; border: 1px solid #ccc; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.95rem; outline: none; }
+        .agent-input-area input:focus { border-color: var(--accent); }
+        .agent-input-area button { background: var(--accent); color: white; border: none; border-radius: 30px; padding: 0.6rem 1.2rem; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .agent-input-area button:hover { background: var(--main); }
+        @media (max-width:600px) { .container { padding:1.5rem 1rem; } .hero h1 { font-size:2.2rem; } .hero .claim { font-size:1.4rem; } .agent-chat { width:280px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Samra Safdar</h1>
+            <p class="claim">I build ML models that predict <span class="accent">content performance</span></p>
+            <p class="sub">So teams stop guessing and start winning</p>
+            <a href="#work" class="cta-btn">See My Work →</a>
+        </div>
+        <h2 class="section-title" id="work">Case Studies</h2>
+        <div class="card">
+            <span class="tag">ML</span>
+            <h3>Content Performance Prediction</h3>
+            <p>Built a Random Forest model that predicts 7‑day views with 29% improvement over baseline (RMSE 850 vs 1200).</p>
+            <div class="skill-list"><span>Python</span><span>scikit-learn</span><span>DuckDB</span><span>Hugging Face</span></div>
+        </div>
+        <div class="card">
+            <span class="tag">Data</span>
+            <h3>Data Contract &amp; Feature Engineering</h3>
+            <p>Designed 5 features available at decision time; verified data quality; avoided leakage.</p>
+        </div>
+        <div class="card">
+            <span class="tag">Research</span>
+            <h3>Capstone Paper</h3>
+            <p>Full research paper on content visibility – <a href="https://samki6576.github.io/flyrank" target="_blank" style="color:var(--accent);font-weight:600;">Read the paper →</a></p>
+        </div>
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p>I'm an ML engineer who loves turning messy data into useful tools. I completed the FlyRank ML internship, building an end‑to‑end prediction pipeline.</p>
+            <div class="skill-list"><span>Python</span><span>Pandas</span><span>NumPy</span><span>scikit-learn</span><span>DuckDB</span><span>SQL</span><span>Git</span></div>
+        </div>
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="card" style="text-align:center;">
+            <p>📧 <a href="mailto:hismm8690@gmail.com" style="color:var(--main);font-weight:600;">hismm8690@gmail.com</a></p>
+            <a href="mailto:hismm8690@gmail.com" class="cta-btn" style="margin-top:0.5rem;">Email Me →</a>
+        </div>
+        <div class="footer">Built during the FlyRank AI Internship · <a href="https://flyrank.ai">FlyRank</a></div>
+    </div>
+
+    <div class="agent-widget">
+        <div class="agent-chat" id="chatBox">
+            <div class="agent-header"><span>🤖 Ask Samra</span><button onclick="closeChat()">✕</button></div>
+            <div class="agent-messages" id="messages"><p><span class="bot">Hi! Ask me about Samra's work.</span></p></div>
+            <div class="agent-input-area">
+                <input type="text" id="userInput" placeholder="Ask something..." onkeypress="if(event.key==='Enter') sendMessage()">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        <button class="agent-toggle" onclick="toggleChat()">💬 Ask Samra</button>
+    </div>
+
+    <script>
+        const qaMap = {
+            "what do you do": "I build ML models that predict content performance.",
+            "what is your project": "I built a model that predicts 7‑day views with 29% improvement over baseline.",
+            "what skills do you have": "Python, Pandas, NumPy, scikit-learn, DuckDB, SQL, Hugging Face, Git.",
+            "how can i contact you": "Email me at hismm8690@gmail.com.",
+            "what is your capstone": "It's a research paper on content visibility, deployed on GitHub Pages.",
+            "what was the result": "The model achieved RMSE 850, beating the baseline of 1200 – a 29% improvement.",
+            "what is your claim": "I build ML models that predict content performance so teams stop guessing."
+        };
+        function getResponse(input) {
+            const lower = input.toLowerCase();
+            for (const [key, val] of Object.entries(qaMap)) {
+                if (lower.includes(key)) return val;
+            }
+            return "I'm not sure – ask about my projects, skills, or contact info.";
+        }
+        function toggleChat() { document.getElementById('chatBox').classList.toggle('open'); }
+        function closeChat() { document.getElementById('chatBox').classList.remove('open'); }
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const msg = input.value.trim();
+            if (!msg) return;
+            const messages = document.getElementById('messages');
+            messages.innerHTML += `<p class="user"><strong>You:</strong> ${msg}</p>`;
+            input.value = '';
+            setTimeout(() => {
+                const reply = getResponse(msg);
+                messages.innerHTML += `<p><span class="bot">${reply}</span></p>`;
+                messages.scrollTop = messages.scrollHeight;
+            }, 300);
+        }
+    </script>
+</body>
+</html>
