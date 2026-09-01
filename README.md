@@ -186,15 +186,6 @@ MIT © Samra Safdar
 *Built with ❤️ during the FlyRank AI Internship*
 ```
 
----
 
-## How to Add This
-
-1. Copy the entire README above.
-2. Go to your repository on GitHub.
-3. Click on `README.md`.
-4. Click the **pencil icon** (Edit).
-5. Replace the existing content with this README.
-6. Click **Commit changes**.
 
 Done! 🚀
