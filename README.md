@@ -1,6 +1,4 @@
-Here's a complete README for your repository:
 
-```markdown
 # FlyRank ML Internship – Samra Safdar
 
 > **Content Performance Prediction** · End-to-end ML pipeline · Live portfolio with AI agent
